@@ -1,0 +1,125 @@
+{
+  "doc": "Stock data that does not change during trading hours",
+  "fields": [
+    {
+      "default": "null",
+      "name": "symbol",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "default": "null",
+      "name": "name",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "assets",
+      "type": "long"
+    },
+    {
+      "name": "cash",
+      "type": "long"
+    },
+    {
+      "name": "debt",
+      "type": "long"
+    },
+    {
+      "name": "ebit_annual",
+      "type": "long"
+    },
+    {
+      "doc": "Array of ebit for the last 4 quarters",
+      "name": "ebit_quarterly",
+      "type": {
+        "items": {
+          "fields": [
+            {
+              "name": "date",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "ebit",
+              "type": "long"
+            }
+          ],
+          "name": "QuarterlyEbit",
+          "type": "record"
+        },
+        "type": "array"
+      }
+    },
+    {
+      "name": "equity",
+      "type": "long"
+    },
+    {
+      "doc": "Percentage of shares owned by institutions",
+      "name": "institutional_investment",
+      "type": "double"
+    }
+  ],
+  "name": "LongTermStockData",
+  "namespace": "com.doherty",
+  "type": "record"
+}
+
+
+
+
+
+
+{
+  "doc": "Stock data that changes during trading hours",
+  "fields": [
+    {
+      "name": "symbol",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "name",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "price",
+      "type": "double"
+    },
+    {
+      "name": "change_percentage",
+      "type": "double"
+    },
+    {
+      "name": "market_cap",
+      "type": "long"
+    },
+    {
+      "name": "volume",
+      "type": "int"
+    },
+    {
+      "name": "average_volume",
+      "type": "long"
+    },
+    {
+      "name": "pe",
+      "type": "double"
+    }
+  ],
+  "name": "StockQuote",
+  "namespace": "com.doherty",
+  "type": "record"
+}

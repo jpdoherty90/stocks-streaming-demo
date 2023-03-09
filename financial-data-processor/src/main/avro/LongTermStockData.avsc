@@ -1,0 +1,64 @@
+{
+  "type": "record",
+  "namespace": "com.doherty",
+  "name": "LongTermStockData",
+  "doc": "Stock data that does not change during trading hours",
+  "fields": [
+    {
+      "name": "symbol",
+      "type": "string",
+      "default": "null"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "default": "null"
+    },
+    {
+      "name": "assets",
+      "type": "long"
+    },
+    {
+      "name": "cash",
+      "type": "long"
+    },
+    {
+      "name": "debt",
+      "type": "long"
+    },
+    {
+      "name": "ebit_annual",
+      "type": "long"
+    },
+    {
+      "name": "ebit_quarterly",
+      "type": {
+        "type": "array",
+        "items":{
+          "name": "QuarterlyEbit",
+          "type": "record",
+          "fields":[
+            {
+              "name": "date",
+              "type": "string"
+            },
+            {
+              "name": "ebit",
+              "type": "long"
+            }
+          ]
+        }
+      },
+      "doc": "Array of ebit for the last 4 quarters"
+    },
+    {
+      "name": "equity",
+      "type": "long"
+    },
+    {
+      "name": "institutional_investment",
+      "type": "double",
+      "doc": "Percentage of shares owned by institutions"
+    }
+  ]
+}

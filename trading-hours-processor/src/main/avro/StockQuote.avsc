@@ -1,0 +1,40 @@
+{
+  "type": "record",
+  "namespace": "com.doherty",
+  "name": "StockQuote",
+  "doc": "Stock data that changes during trading hours",
+  "fields": [
+    {
+      "name": "symbol",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "price",
+      "type": "double"
+    },
+    {
+      "name": "change_percentage",
+      "type": "double"
+    },
+    {
+      "name": "market_cap",
+      "type": "long"
+    },
+    {
+      "name": "volume",
+      "type": "int"
+    },
+    {
+      "name": "average_volume",
+      "type": "long"
+    },
+    {
+      "name": "pe",
+      "type": "double"
+    }
+  ]
+}
